@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+
+    <bean id = "myDog"
+          class="org.example.animals.Dog">
+        <property name="breed" value="${dog.breed}"/>
+        <property name="color" value="${dog.color}"/>
+        <property name="age" value="${dog.age}"/>
+    </bean>
+
+    <bean id = "person"
+          class="org.example.person.Person">
+        <property name="animal" ref="myDog"/>
+        <property name="name" value="${person.name}"/>
+        <property name="age" value="${person.age}"/>
+
+    </bean>
+
+
+    <bean id = "myBear"
+          class="org.example.animals.Bear">
+        <property name="breed" value="${bear.breed}"/>
+        <property name="color" value="${bear.color}"/>
+        <property name="age" value="${bear.age}"/>
+    </bean>
+
+    <bean id = "person1"
+          class="org.example.person.Person">
+        <property name="animal" ref="myBear"/>
+        <property name="name" value="${person1.name1}"/>
+        <property name="age" value="${person1.age1}"/>
+
+    </bean>
+
+
+
+
+
+</beans>
+
+
+
+
